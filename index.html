@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Img to PDF Converter</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Ensure the canvas fits within the PDF page size */
+        @media (min-width: 640px) {
+            .container {
+                max-width: 90%;
+            }
+        }
+        body {
+        font-family: 'Helvetica', 'Arial', sans-serif;
+    }
+
+    header {
+        background-color: rgb(30 41 59);
+        color: white;
+    }
+
+    main {
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 640px) {
+        h1 {
+            font-size: 2rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+        }
+
+        button, a {
+            width: 100%;
+        }
+    }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <header class="py-4">
+        <div class="container mx-auto text-center">
+            <h1 class="text-3xl font-bold text-blue-600">Image to PDF Converter</h1>
+            <p class="text-lg">Easily convert your JPG or PNG images to PDF format.</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto mt-8 p-4 bg-white shadow-lg rounded-lg">
+        <h2 class="text-2xl font-semibold mb-4">Upload Your Image</h2>
+        <input type="file" id="imageInput" accept="image/png, image/jpeg" class="block w-full text-lg py-2 px-4 mb-4 border border-gray-300 rounded-lg">
+        <button id="convertButton" class="bg-blue-600 text-white py-2 px-4 rounded-lg w-full sm:w-auto">Convert to PDF</button>
+        <a id="downloadLink" class="hidden mt-4 inline-block bg-green-600 text-white py-2 px-4 rounded-lg" download="image.pdf">Download PDF</a>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
